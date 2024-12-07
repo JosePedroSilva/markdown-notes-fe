@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+/* Variable CSS declarations */
+:root {
+  --base-font: 'Roboto', sans-serif;
+  --code-font: 'Fira Code', monospace;
+
+  /* Colors */
+  --color-green-100: #123524;
+  --color-green-200: #2A4939;
+  --color-green-300: #425D4E;
+  --color-green-400: #5B7365;
+  --color-green-500: #75897D;
+  --color-green-600: #8F9F96;
+
+  --color-dark-100: #121212;
+  --color-dark-200: #282828;
+  --color-dark-300: #3F3F3F;
+  --color-dark-400: #575757;
+  --color-dark-500: #575757;
+  --color-dark-600: #8B8B8B;
+
+  --color-variant-100: #141D18;
+  --color-variant-200: #29322D;
+  --color-variant-300: #404844;
+  --color-variant-400: #58605B;
+  --color-variant-500: #727874;
+  --color-variant-600: #8C928F;
+
+  --color-font-base: #FFFFFF;
+
+  /* font sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+
+  /* spacing */
+  --spacing-1: 5px; 
+  --spacing-2: 10px;
+  --spacing-3: 15px;
+  --spacing-4: 20px;
+  --spacing-5: 25px;
+  --spacing-6: 30px;
+  --spacing-7: 35px;
+  --spacing-8: 40px;
+  --spacing-9: 45px;
+  --spacing-10: 50px;
+
+  /* border radius */
+  --border-radius-sm: 5px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 15px;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+    font-family: var(--base-font);
+    background-color: var(--color-variant-200);
+    min-height: 100vh;
+    color: var(--color-font-base);
+}
+
+body {
+    overscroll-behavior: none;
+  }
+
+a {
+text-decoration: none;
+}
+
+ul,
+li {
+list-style: none;
+}
+
+p,
+li,
+a {
+  font-size: var(--font-size-md);
+}
+
+a{
+  text-decoration: none;
+  display: block;
+}
+
+a:hover{
+  text-decoration: underline;
+}
