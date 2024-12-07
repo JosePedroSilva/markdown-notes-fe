@@ -1,34 +1,43 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 
-import App from './App';
 import AuthRoute from './components/AuthRoute';
+
+import PublicLayout from './layouts/PublicLayout';
+import PrivateLayout from './layouts/PrivateLayout';
+
 import Login from './pages/public/Login';
+import SignUp from './pages/public/SignUp';
+
 import Dashboard from './pages/private/Dashboard';
 
 const router = createBrowserRouter([
   {
+    // Public layout for unauthenticated routes
     path: '/',
-    element: <App />,
+    element: <PublicLayout />,
     children: [
       {
-        element: <AuthRoute isProtected={false}/>,
-        children:[
-          {
-            path: 'login', element: <Login />
-          }
-        ]
+        element: <AuthRoute isProtected={false} />,
+        children: [
+          { path: 'login', element: <Login /> },
+          { path: 'signup', element: <SignUp /> },
+        ],
       },
+      { index: true, element: <Navigate to="/login" replace /> },
+    ],
+  },
+  {
+    path: '/',
+    element: <PrivateLayout />,
+    children: [
       {
-        element: <AuthRoute isProtected={true}/>,
-        children:[
-          {
-            path: 'dashboard', element: <Dashboard />
-          }
-        ]
+        element: <AuthRoute isProtected={true} />,
+        children: [
+          { path: 'dashboard', element: <Dashboard /> },
+        ],
       },
-      { path: '*', element: <Navigate to="/login" replace /> },
-    ]
-  }
-])
+    ],
+  },
+]);
 
 export default router;
