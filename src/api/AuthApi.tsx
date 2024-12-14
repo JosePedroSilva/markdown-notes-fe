@@ -31,5 +31,5 @@ export const loginUser = async (email: string, password: string) => {
     throw new Error('Error logging in user');
   }
 
-  return response.json();
+  return response;
 };
