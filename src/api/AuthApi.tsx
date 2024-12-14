@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.SERVER_API_URL;
+const API_URL = import.meta.env.VITE_SERVER_API_URL;
 const LOGIN_URL = `${API_URL}/auth/login`;
 const REGISTER_URL = `${API_URL}/auth/register`;
 
@@ -15,7 +15,7 @@ export const registerUser = async (email: string, password: string) => {
     throw new Error('Error registering user');
   }
 
-  return response.json();
+  return response;
 };
 
 export const loginUser = async (email: string, password: string) => {
