@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     if (storageToken) {
       setToken(storageToken);
     }
-  }, []);
+  }, [token]);
 
   const register = async (email: string, password: string) => {
     const data = await registerUser(email, password);
@@ -47,6 +47,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
     const jsonData = await data.json();
 
+    setToken(jsonData.token);
     localStorage.setItem('token', jsonData.token);
   };
 
@@ -61,7 +62,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       throw new Error('Error logging in user' + data.status);
     }
 
-    localStorage.setItem('token', data.token);
+    const jsonData = await data.json();
+
+    localStorage.setItem('token', jsonData.token);
+    setToken(jsonData.token);
   };
 
   const logout = () => {
