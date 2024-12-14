@@ -37,8 +37,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const register = async (email: string, password: string) => {
     const data = await registerUser(email, password);
 
-    console.log('user registered', data);
-
     if (!data.ok) {
       if (data.status === 409) {
         throw new Error('User already exists');
@@ -47,13 +45,13 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       throw new Error('Error registering user' + data.status);
     }
 
-    localStorage.setItem('token', data.token);
+    const jsonData = await data.json();
+
+    localStorage.setItem('token', jsonData.token);
   };
 
   const login = async (email: string, password: string) => {
     const data = await loginUser(email, password);
-
-    console.log('user logged in', data);
 
     if (!data.ok) {
       if (data.status === 401) {
