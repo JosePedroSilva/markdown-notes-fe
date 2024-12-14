@@ -1,0 +1,39 @@
+.public-layout-container{
+  display: flex;
+  height: 100vh;
+}
+
+.public-layout-left,
+.public-layout-right{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.public-layout-right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: calc(100vh * 2/3);
+}
+.public-layout-left{
+  background-color: var(--color-font-base);
+  color: var(--color-green-100)
+}
+
+.public-layout-right{
+  background-color: var(--color-variant-600);
+}
+
+.public-layout-right .slogan-accent-span{
+  font-weight: 400;
+  font-family: var(--logo-font);
+  color: var(--color-green-100);
+}
+
+.public-layout-right h1{
+  font-weight: 400;
+}
+
