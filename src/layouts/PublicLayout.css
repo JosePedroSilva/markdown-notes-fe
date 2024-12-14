@@ -37,3 +37,14 @@
   font-weight: 400;
 }
 
+.cursor {
+  color: var(--color-green-100);
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
