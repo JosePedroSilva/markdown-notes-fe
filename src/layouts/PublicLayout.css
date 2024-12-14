@@ -7,7 +7,7 @@
   position: absolute;
   top: var(--spacing-logo);
   left: var(--spacing-logo);
-  color: var(--color-green-100);
+  color: var(--color-dark-100);
   font-family: var(--logo-font);
 }
 
@@ -26,20 +26,17 @@
   justify-content: flex-start;
   padding-top: calc(100vh * 2/3);
   padding-left: var(--spacing-10);
+  background-color: var(--color-dark-400);
 }
 .public-layout-left{
   background-color: var(--color-font-base);
-  color: var(--color-green-100)
-}
-
-.public-layout-right{
-  background-color: var(--color-variant-600);
+  color: var(--color-dark-100)
 }
 
 .public-layout-right .slogan-accent-span{
   font-weight: 400;
   font-family: var(--logo-font);
-  color: var(--color-green-100);
+  color: var(--color-light-100);
 }
 
 .public-layout-right h1{
@@ -47,7 +44,7 @@
 }
 
 .cursor {
-  color: var(--color-green-100);
+  color: var(--color-light-100);
   display: inline-block;
   animation: blink 1s step-end infinite;
 }
