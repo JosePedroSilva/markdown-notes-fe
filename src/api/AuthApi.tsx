@@ -1,4 +1,4 @@
-const API_URL = process.env.SERVER_API_URL;
+const API_URL = import.meta.env.SERVER_API_URL;
 const LOGIN_URL = `${API_URL}/auth/login`;
 const REGISTER_URL = `${API_URL}/auth/register`;
 
