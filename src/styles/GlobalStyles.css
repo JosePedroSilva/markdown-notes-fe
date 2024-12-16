@@ -8,36 +8,39 @@
   --logo-font: 'Sarpanch', sans-serif;	
 
   /* Colors */
-  --color-green-100: #123524;
-  --color-green-200: #2A4939;
-  --color-green-300: #425D4E;
-  --color-green-400: #5B7365;
-  --color-green-500: #75897D;
-  --color-green-600: #8F9F96;
+  --color-light-100: #00ADB5;
+  --color-light-200: #42B6BD;
+  --color-light-300: #62BFC5;
+  --color-light-400: #7CC9CD;
+  --color-light-500: #93D2D5;
+  --color-light-600: #AADBDE;
 
-  --color-dark-100: #121212;
-  --color-dark-200: #282828;
-  --color-dark-300: #3F3F3F;
-  --color-dark-400: #575757;
-  --color-dark-500: #575757;
-  --color-dark-600: #8B8B8B;
+  --color-dark-100: #222831;
+  --color-dark-200: #373C45;
+  --color-dark-300: #4D525A;
+  --color-dark-400: #64686F;
+  --color-dark-500: #7C8086;
+  --color-dark-600: #95989D;
 
-  --color-variant-100: #141D18;
-  --color-variant-200: #29322D;
-  --color-variant-300: #404844;
-  --color-variant-400: #58605B;
-  --color-variant-500: #727874;
-  --color-variant-600: #8C928F;
+  --color-variant-100: #2a5a62;
+  --color-variant-200: #426b72;
+  --color-variant-300: #597c82;
+  --color-variant-400: #708e93;
+  --color-variant-500: #87a0a4;
+  --color-variant-600: #9eb2b6;
 
   --color-font-base: #FFFFFF;
 
   /* font sizes */
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-md: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.5rem;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+  --font-size-5xl: 48px;
 
   /* spacing */
   --spacing-1: 5px; 
@@ -50,6 +53,8 @@
   --spacing-8: 40px;
   --spacing-9: 45px;
   --spacing-10: 50px;
+
+  --spacing-logo: 100px;
 
   /* border radius */
   --border-radius-sm: 5px;
@@ -68,7 +73,7 @@
 
 html{
     font-family: var(--base-font);
-    /* background-color: var(--color-variant-200); */
+    background-color: var(--color-variant-200);
     min-height: 100vh;
     color: var(--color-font-base);
 }
@@ -81,6 +86,10 @@ a {
 text-decoration: none;
 }
 
+a:visited {
+color: inherit;
+}
+
 ul,
 li {
 list-style: none;
@@ -91,12 +100,54 @@ li,
 a {
   font-size: var(--font-size-md);
 }
-
-a{
-  text-decoration: none;
-  display: block;
-}
-
 a:hover{
   text-decoration: underline;
 }
+
+h1{
+  font-size: var(--font-size-5xl);
+}
+
+h2{
+  font-size: var(--font-size-4xl);
+  font-weight: 400;
+}
+
+/* Input styles */
+
+input[type="text"],
+input[type="password"],
+input[type="email"]{
+  padding: var(--spacing-3);
+  border: var(--color-variant-600) 1px solid;
+  border-radius: var(--border-radius-sm);
+  font-family: var(--base-font);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus{
+  outline: none;
+  border: var(--color-variant-100) 1px solid;
+}
+
+/* Button styles */
+
+button{
+  padding: var(--spacing-3);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-family: var(--base-font);
+  background-color: var(--color-light-100);
+  color: var(--color-font-base);
+}
+
+button:hover{
+  background-color: var(--color-light-200);
+}
+
+button:disabled{
+  background-color: var(--color-variant-400);
+}
+

@@ -1,0 +1,24 @@
+.auth-form-container{
+  min-width: 500px;
+}
+
+.auth-form-container h2{
+  margin-bottom: var(--spacing-10);
+}
+
+.auth-form-container form{
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-form-container form input{
+  margin-bottom: var(--spacing-6);
+}
+
+.auth-form-container form a{
+  align-self: flex-end;
+}
+
+
+
+
