@@ -2,6 +2,8 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 
 import AuthRoute from './components/AuthRoute';
 
+import AppInitializer from './components/AppInitializer';
+
 import PublicLayout from './layouts/PublicLayout';
 import PrivateLayout from './layouts/PrivateLayout';
 
@@ -12,7 +14,6 @@ import Dashboard from './pages/private/Dashboard';
 
 const router = createBrowserRouter([
   {
-    // Public layout for unauthenticated routes
     path: '/',
     element: <PublicLayout />,
     children: [
@@ -28,12 +29,17 @@ const router = createBrowserRouter([
   },
   {
     path: '/',
-    element: <PrivateLayout />,
+    element: <AuthRoute isProtected={true} />, // First, ensure user is authenticated
     children: [
       {
-        element: <AuthRoute isProtected={true} />,
+        element: <AppInitializer />,
         children: [
-          { path: 'dashboard', element: <Dashboard /> },
+          {
+            element: <PrivateLayout />,
+            children: [
+              { path: 'dashboard', element: <Dashboard /> },
+            ],
+          },
         ],
       },
     ],
