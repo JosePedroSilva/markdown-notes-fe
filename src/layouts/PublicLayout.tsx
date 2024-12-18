@@ -18,8 +18,8 @@ const PublicLayout = () => {
 
   return (
     <>
-      <h1 className="logo">MarkNest</h1>
       <div className='public-layout-container'>
+        <h1 className="logo">MarkNest</h1>
         <div className="public-layout-left">
           <Outlet />
         </div>
