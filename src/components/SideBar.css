@@ -1,0 +1,27 @@
+.sidebar-container{
+  width: 300px;
+  background-color: var(--color-dark-300);
+  height: 100%;
+  padding: var(--spacing-2);
+}
+
+.sidebar-container .logo{
+  position: relative;
+  font-family: var(--logo-font);
+  font-size: var(--font-size-xl);
+}
+
+.sidebar-container .logo h1{
+  font-family: var(--logo-font);
+  font-size: var(--font-size-3xl);
+}
+
+.sidebar-container .logo::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-dark-400);
+}
