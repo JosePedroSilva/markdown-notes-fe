@@ -29,7 +29,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/',
-    element: <AuthRoute isProtected={true} />, // First, ensure user is authenticated
+    element: <AuthRoute isProtected={true} />,
     children: [
       {
         element: <AppInitializer />,
