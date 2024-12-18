@@ -3,7 +3,7 @@
   height: 100vh;
 }
 
-.logo{
+.public-layout-container .logo{
   position: absolute;
   top: var(--spacing-logo);
   left: var(--spacing-logo);
